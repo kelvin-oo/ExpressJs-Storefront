@@ -42,6 +42,7 @@ mongoose
     'mongodb+srv://Olamilekan-obisesan-1:09090102835@cluster0.afforgo.mongodb.net/shop-express?retryWrites=true&w=majority'
   )
   .then(result => {
+    console.log('connected!')
     User.findOne().then(user => {
       if (!user) {
         const user = new User({
@@ -50,7 +51,7 @@ mongoose
           cart: {
             items: []
           }
-        });
+        });5
         user.save();
       }
     });
